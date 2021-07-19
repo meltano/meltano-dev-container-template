@@ -1,24 +1,3 @@
 version: 1
 send_anonymous_usage_stats: true
 project_id: 1da38638-8ea7-418f-9031-dc5d3d92abf7
-plugins:
-  extractors:
-  - name: tap-carbon-intensity
-    variant: meltano
-    pip_url: git+https://gitlab.com/meltano/tap-carbon-intensity.git
-  loaders:
-  - name: target-jsonl
-    variant: andyh1203
-    pip_url: target-jsonl
-    config:
-      do_timestamp_file: true
-  - name: target-snowflake
-    variant: datamill-co
-    pip_url: target-snowflake
-    config:
-      snowflake_account: slalom_training
-      snowflake_database: SWIFT_DB
-      snowflake_role: TRAINING_ROLE
-      snowflake_schema: PUBLIC
-      snowflake_username: SWIFT
-      snowflake_warehouse: SWIFT_WH
