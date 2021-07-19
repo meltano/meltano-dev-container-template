@@ -12,10 +12,13 @@ you to install any additional extensions needed to <a href="vscode://ms-vscode-r
 
 ### Run a simple Meltano pipeline
 
-Once you've opened the project, test that meltano is running executing the following sample pipeline
-in a new VS Code terminal:
+Once you've opened the project, test that meltano is running executing the following
+in a new VS Code terminal. These commands add a sample tap and target and then run a simple
+pipeline test:
 
 ```bash
+meltano add extractor tap-carbon-intensity
+meltano add loader target-jsonl
 meltano elt tap-carbon-intensity target-jsonl 
 ```
 
