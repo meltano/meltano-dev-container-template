@@ -37,19 +37,19 @@ jobs:
       - name: Install meltano project plugins
         run: meltano install
 
-      # Runs a set of commands using the runners shell
-      - name: Run the meltano pipeline
-        run: |
-          meltano elt tap-carbon-intensity target-jsonl
-          echo "Extract-load completed successfully!"
+      # Uncomment to run an elt pipeline using the CI runner
+      # - name: Run the meltano pipeline
+      #   run: |
+      #     meltano elt tap-carbon-intensity target-jsonl
+      #     echo "Extract-load completed successfully!"
 
-      # Upload output files as CI artifacts
+      # Uncomment to upload output files as CI artifacts
       # WARNING: do not use this option with sensitive data
-      - name: Archive output files as artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: sample-output-files
-          path: |
-            output
-            !output/**/*.md
-          retention-days: 2  # Remove artifacts after 2 days
+      # - name: Archive output files as artifacts
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: sample-output-files
+      #     path: |
+      #       output
+      #       !output/**/*.md
+      #     retention-days: 2  # Remove artifacts after 2 days
