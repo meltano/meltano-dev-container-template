@@ -8,3 +8,13 @@ plugins:
     pip_url: target-jsonl
     config:
       do_timestamp_file: true
+  - name: target-snowflake
+    variant: datamill-co
+    pip_url: target-snowflake
+    config:
+      snowflake_account: slalom_training
+      snowflake_database: SWIFT_DB
+      snowflake_role: TRAINING_ROLE
+      snowflake_schema: PUBLIC
+      snowflake_username: SWIFT
+      snowflake_warehouse: SWIFT_WH
